@@ -1,10 +1,10 @@
-import PostCard from "./postCard";
-
+import Maincontainer from  './MainContainer/MainContainer'
+import NavBar from "./NavBar/NavBar"
 function SocialApp(){
    return (
     <div>
-    Social App
-    <PostCard/>
+    <NavBar/>
+    <Maincontainer/>
     </div>
    )
     
