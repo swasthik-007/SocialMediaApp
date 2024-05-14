@@ -17,7 +17,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 
 
-export default function PostCard() {
+export default function PostCard({authorfirstname,image,content}) {
 
 
   return (
@@ -25,7 +25,7 @@ export default function PostCard() {
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
+            {authorfirstname.substring(0,1)}
           </Avatar>
         }
         
@@ -35,14 +35,13 @@ export default function PostCard() {
       <CardMedia
         component="img"
         height="194"
-        image="https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1xw:0.74975xh;center,top&resize=980:*"
+        image={image}
+        
         alt="Paella dish"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+         {content}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
