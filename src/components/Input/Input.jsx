@@ -1,11 +1,8 @@
-// import { Box } from '@mui/material';
-import { styled } from '@mui/system';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import { useState ,useContext} from 'react';
 import axios from 'axios';
-// import LoadingButton from '@mui/lab/LoadingButton';
 import LoadingButton from '@mui/lab/LoadingButton';
 import PostCardContext from '../../providers/PostsProvider';
 
@@ -31,7 +28,7 @@ function Input(){
   
   })
   .then(response =>{
-      setPosts([...posts,response.data])
+      setPosts([response.data,...posts])
       setLoading(false);
       setPostText("");
       setImageUrl("");

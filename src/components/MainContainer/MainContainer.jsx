@@ -13,13 +13,13 @@ export default function MainContainer() {
          <UserList />
         </Grid>
         <Grid 
-        container
+        containers
         alignItems={'center'} 
         justifyContent={'center'} 
         direction={'column'}   
         md={8}>
           {/* {Posts} */}
-       <PostCardList/>
+       <PostCardList />
        
         </Grid>
        
