@@ -1,10 +1,14 @@
 
 import PostCard from "../postCard";
-import { useEffect, useState } from "react";
+import { useEffect,useContext } from "react";
 import axios from "axios"
+import PostCardContext from "../../providers/PostsProvider";
+
 
 function PostCardList(){
-  const [posts,setPosts]=useState([]);
+//   const [posts,setPosts]=useState([]);
+
+const {posts,setPosts}=useContext(PostCardContext);//now this data is coming from the context api (not llocal to the card only)
   useEffect(()=> {
     // we will dload theh content from dummy api
     console.log(import.meta.env.VITE_APP_ID)
@@ -16,7 +20,7 @@ function PostCardList(){
         const responseObject=response.data;
         setPosts([...responseObject.data]);
     })
-},[]);
+},[posts]);
     return (
        (posts.length==0)? "loading...":   posts.map((post)=> <PostCard 
         content={post.text} 

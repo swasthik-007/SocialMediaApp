@@ -27,7 +27,7 @@ const  [isLiked,setIsLiked] =useState(false);
           </Avatar>
         }
         
-        title="Shrimp and Chorizo Paella"
+        title={authorfirstname}
         subheader="September 14, 2016"
       />
       <CardMedia
@@ -43,9 +43,9 @@ const  [isLiked,setIsLiked] =useState(false);
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton aria-label="add to favorites" onClick={ ()=> setIsLiked(!isLiked)}>
           {
-            (isLiked) ? <FavoriteIcon onClick={ ()=> setIsLiked(!isLiked)} /> : <FavoriteBorderIcon onClick={ ()=> setIsLiked(!isLiked)} />
+            (isLiked) ? <FavoriteIcon sx={{color:red[500]}}  /> : <FavoriteBorderIcon />
           }
           
           
