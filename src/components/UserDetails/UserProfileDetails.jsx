@@ -7,22 +7,23 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 
 import Typography from '@mui/material/Typography';
-
-
-
-
-
-
-
+import { useParams } from 'react-router-dom';
+import { useQuery } from 'react-query';
+import fetchUser from '../../helpers/fetchUser';
 
 export default function UserDetails() {
  
-const [user,loading]=useUserProfile();
+// const [user,loading]=useUserProfile();
+const {userId}=useParams()
+const response =useQuery(["user",userId],fetchUser)
 
-if (loading){
-return<div>Loading....</div>
+if (response.isLoading){
+
+   return<div>Loading....</div>
 }
 else{
+  const user=response.data.data;
+  
   return (
     <>
      <Card sx={{ display: 'flex' ,mt:'2rem' }}>
